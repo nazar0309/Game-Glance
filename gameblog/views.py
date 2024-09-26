@@ -6,6 +6,6 @@ from django.contrib import messages
 
 
 class GameList(generic.ListView):
-    queryset = Game.objects.filter(status=1)
+    queryset = Game.objects.order_by('-created_on')
     template_name = "gameblog/index.html"
     paginate_by = 3
