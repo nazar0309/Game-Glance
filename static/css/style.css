@@ -13,7 +13,9 @@
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+body {
+    background-image: url('');
+}
 /* Game image */
 .game-image img {
     width: 100%;
@@ -69,5 +71,46 @@
     .games-container {
         grid-template-columns: 1fr;
     }
+}
+
+.pagination {
+    margin: 20px 0; /* Add some margin for spacing */
+}
+
+.pagination .page-link {
+    color: white; /* Text color */
+    background-color: #343a40; /* Dark background (same as footer) */
+    border-color: #343a40; /* Match the border with the background */
+}
+
+.pagination .page-link:hover {
+    background-color: #495057; /* A lighter shade for hover effect */
+    color: white; /* Text color on hover */
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #343a40; /* Match the background for disabled */
+    color: #6c757d; /* Grey color for disabled text */
+}
+
+.pagination .page-item.disabled .page-link {
+    color: white;
+    border-right: 1px solid #f9f9f9;
+}
+/* Centering the button in the form */
+.btn-block {
+    width: 100%; /* Make button full width */
+}
+
+/* Optional: Adjust button color to match footer */
+.btn-dark {
+    background-color: #343a40; /* Match with your footer's dark color */
+    color: white; /* White text color for contrast */
+    width: 100px;
+}
+
+/* Add hover effect for button */
+.btn-dark:hover {
+    background-color: #495057; /* Lighter shade on hover */
 }
 

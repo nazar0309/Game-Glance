@@ -1,5 +1,8 @@
 {% load static %}
 {% url 'home' as home_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -68,12 +71,19 @@
 
                     <!-- Right-side: Login/Register Links -->
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#">Login</a>
+	                        <a class="nav-link text-light {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+	                        <a class="nav-link text-light {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+		                        href="{% url 'account_signup' %}">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#">Register</a>
+	                        <a class="nav-link text-light {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
