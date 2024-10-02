@@ -72,6 +72,9 @@
                     <!-- Right-side: Login/Register Links -->
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         {% if user.is_authenticated %}
+                        <li class = 'nav-item'>
+                            <a class = 'nav-link text-light' href='#'>{{user.username}}</a>
+                        </li>
                         <li class="nav-item">
 	                        <a class="nav-link text-light {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                         </li>
