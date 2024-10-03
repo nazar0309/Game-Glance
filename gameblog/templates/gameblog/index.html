@@ -10,7 +10,7 @@
         </div>
         <div class='game-info'>
             <h2>{{ game.title }}</h2>
-            <a href="#">View game</a>
+            <a href="{% url 'game_detail' game.slug %}">View game</a>
         </div>
     </div>
     {% endfor %}
