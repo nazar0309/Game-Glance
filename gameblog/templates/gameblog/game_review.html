@@ -19,7 +19,19 @@
             </div>
         </div>
         <div class='add_review'>
-            <h2>Add Review</h2>
+            {% if user.is_authenticated %}
+            <h2>Leave Review:</h2>
+            <p>Posting as: {{ user.username }}</p>
+            <form id="reviewForm" method="post"
+            style="margin-top: 1.3em;">
+            {{ review_form | crispy }}
+            {% csrf_token %}
+            <button id="submitButton" type="submit"
+              class="btn btn-signup btn-lg">Submit</button>
+          </form>
+          {% else %}
+          <p>Log in to leave a comment</p>
+          {% endif %}
         </div>
     </div>
 {% endblock %}
