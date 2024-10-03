@@ -14,7 +14,7 @@ class GameList(generic.ListView):
 def game_detail(request, slug):
     queryset = Game.objects.order_by('-created_on')
     game = get_object_or_404(queryset, slug=slug)
-    reviews = game.reviews.all().order_by("-created_on")
+    reviews = game.reviews.all().order_by('-created_on')[:3]
     
     if request.method == "POST":
         print('Getting the POST request...')
