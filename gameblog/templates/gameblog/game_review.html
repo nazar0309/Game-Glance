@@ -15,8 +15,8 @@
     </div>
 </div>
 
-<div class='reviews_container'>
-    <div class='last_reviews'>
+<div class='reviews_container '>
+    <div class='last_reviews bg-dark text-white'>
         <h2>Last Reviews</h2>
         <div class="reviews_grid">
             {% for review in reviews %}
@@ -27,19 +27,22 @@
             {% endfor %}
         </div>
     </div>
-    <div class='add_review'>
+    <div class='add_review bg-dark text-white'>
         {% if user.is_authenticated %}
         <h2>Leave Review:</h2>
         <p>Posting as: {{ user.username }}</p>
         <form id="reviewForm" method="post" style="margin-top: 1.3em;">
             {{ review_form | crispy }}
             {% csrf_token %}
-            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+            <button id="submitButton" type="submit" class="btn btn-outline-success">Submit</button>
         </form>
         {% else %}
         <p>Log in to leave a review</p>
         {% endif %}
     </div>
 </div>
+
 {% endblock %}
+
+
 
