@@ -19,10 +19,12 @@ from django.urls import path, include
 
 
 urlpatterns = [
+    path("user_profile/", include("user_profile.urls"), name="user_profile-urls"),
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path('', include('gameblog.urls'), name='gameblog-urls'),  # Add this line
+    
 ]
 
 
