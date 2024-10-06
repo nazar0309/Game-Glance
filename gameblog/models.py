@@ -15,6 +15,7 @@ class Game(models.Model):
     platform = models.CharField(max_length=50)  # e.g., PC, PlayStation, Xbox
     created_on = models.DateTimeField(auto_now_add=True)  # Auto timestamp for when the game is added
     updated_on = models.DateTimeField(auto_now=True)      # Auto timestamp for last modification
+    youtube_url = models.URLField(max_length=500, blank=True, null=True)  # To store the YouTube URL
 
     def __str__(self):
         return self.title

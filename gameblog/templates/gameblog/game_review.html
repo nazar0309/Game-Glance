@@ -5,7 +5,10 @@
 
 <div class='game_r_detail'>
     <div class='game_r_image'>
-        <img src="{{ game.image.url }}" alt="{{ game.title }}">
+        <iframe width="900" height="650"
+        src="https://www.youtube.com/embed/{{ game.youtube_url|slice:'-11:' }}?autoplay=1&mute=1"
+        frameborder="0" allowfullscreen>
+        </iframe>
     </div>
     <div class='game_r_description'>
         <h2>{{ game.title }}</h2>
@@ -15,9 +18,10 @@
     </div>
 </div>
 
-<div class='reviews_container '>
+<div class='reviews_container'>
     <div class='last_reviews bg-dark text-white'>
         <h2>Last Reviews</h2>
+        {% if reviews|length != 0 %}
         <div class="reviews_grid">
             {% for review in reviews %}
             <div class='review_card'>
@@ -26,6 +30,9 @@
             </div>
             {% endfor %}
         </div>
+        {% else %}
+        <p>No reviews yet. You can be the fisrt!</p>
+        {% endif %}
     </div>
     <div class='add_review bg-dark text-white'>
         {% if user.is_authenticated %}
@@ -42,7 +49,25 @@
     </div>
 </div>
 
+<div class='related_games'>
+    <h2>Related Games</h2>
+    <div class='games-container'>
+     {% for game in related_games %}
+        <div class='game'>
+            <div class='game-image'>
+                <img src="{{ game.image.url }}" alt="{{ game.title }}">
+            </div>
+            <div class='game-info'>
+                <h2>{{ game.title }}</h2>
+                <a href="{% url 'game_detail' game.slug %}">View game</a>
+            </div>
+        </div>
+     {% endfor %}  
+    </div>
+    
+</div>
 {% endblock %}
+
 
 
 
