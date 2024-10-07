@@ -150,6 +150,36 @@ body {
     margin-bottom: 15px;
 }
 
+/* Container for reviews */
+.user_reviews_container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically (if needed) */
+}
+
+/* The reviews section itself */
+.user_reviews {
+    width: 80%; /* Adjust as needed */
+    max-width: 800px; /* Limits the width of the reviews section */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a nice shadow effect */
+    border-radius: 8px;
+}
+
+/* Review cards in a grid layout */
+.reviews_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between review cards */
+}
+
+/* Individual review card styling */
+.review_card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 
 

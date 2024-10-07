@@ -6,13 +6,13 @@
     <p>Welcome, {{ user.username }}</p>
     <p>Here you can see the reviews you have left below the games:</p>
 </div>
-<div class='user_reviews_container'>
-    <div class='user_reviews bg-dark text-white'>
+<div class="user_reviews_container">
+    <div class="user_reviews bg-dark text-white">
         <h2>Your Reviews</h2>
         {% if reviews|length != 0 %}
         <div class="reviews_grid">
             {% for review in reviews %}
-                <div class='review_card'>
+                <div class="review_card">
                     <p><strong>{{ review.game.title }}</strong> - {{ review.created_on }}</p>
                     <p>{{ review.body }}</p>
                 </div>
@@ -23,5 +23,6 @@
         {% endif %}
     </div>
 </div>
+
 {% endblock %}
 
