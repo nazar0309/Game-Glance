@@ -9,7 +9,7 @@ from .forms import ReviewForm
 class GameList(generic.ListView):
     queryset = Game.objects.order_by('-created_on')
     template_name = "gameblog/index.html"
-    paginate_by = 4
+    paginate_by = 8
     
 def game_detail(request, slug):
     queryset = Game.objects.order_by('-created_on')

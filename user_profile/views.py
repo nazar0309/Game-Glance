@@ -10,3 +10,4 @@ def profile_view(request):
 
     return render(request, 'profile.html', {'games': games, 'reviews': user_reviews})
 
+    

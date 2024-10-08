@@ -2,7 +2,8 @@
 {% block content %}
 {% load static %}
 
-<div class=' user_welcome text-center'>
+<div class='bg-container profile-container'>
+<div class=' user_welcome text-center text-white'>
     <p>Welcome, <strong>{{ user.username }}</strong></p>
     <p>Here you can see the reviews you have left below the games:</p>
 </div>
@@ -22,6 +23,7 @@
         <p>No reviews yet. You can be the first!</p>
         {% endif %}
     </div>
+</div>
 </div>
 
 {% endblock %}
