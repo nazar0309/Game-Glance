@@ -1,7 +1,9 @@
 {% extends "base.html" %}
-{% block content %}
 {% load static %}
+{% load crispy_forms_tags %}
 
+
+{% block content %}
 <div class="about-container bg-container">
     <div class="about-content">
         <div class="content-left text-black">
@@ -37,21 +39,12 @@
         </div>
         <div class="content-right">
             <h2 class='text-white'>Collaborate With Us</h2>
-            <form>
-                <div class="form-group">
-                    <label class='text-white' for="name">Name</label>
-                    <input type="text" id="name" class="form-control" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <label class='text-white' for="email">Email</label>
-                    <input type="email" id="email" class="form-control" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <label class='text-white' for="message">Message</label>
-                    <textarea id="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            <form class='text-white' method="post">
+                {{ collaborate_form | crispy }}
+                {% csrf_token %}
+                <button class="btn btn-secondary" 
+                  type="submit">Submit</button>
+              </form>
         </div>
     </div>
 </div>

@@ -11,14 +11,14 @@ def about_view(request):
             collaborate_form.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                'Comment submitted and awaiting approval'
+                'Your request has been submitted successfully. We will get back to you soon.'
             )
             
     collaborate_form = CollaborateForm()
     print('Rendering template...')
     return render(
         request,
-        "about/about.html",
+        "about.html",
          {
         "collaborate_form": collaborate_form,
         },
