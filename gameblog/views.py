@@ -51,7 +51,7 @@ def search_games(request):
     if query:
         results = Game.objects.filter(name__icontains=query)  # Filter games by name
 
-    return render(request, 'your_template.html', {'results': results, 'query': query})
+    return render(request, 'gameblog/index.html', {'results': results, 'query': query})
     
     
 
