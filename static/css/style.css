@@ -259,8 +259,11 @@ h2 {
     background-color: #0056b3; /* Darker shade on hover */
 }
 
-
-
+/* Message alert styles */
+.custom-alert {
+    background-color: gray !important;
+    color: white !important;
+}
 
 
 

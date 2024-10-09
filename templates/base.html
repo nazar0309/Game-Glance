@@ -95,16 +95,14 @@
         </nav>
         <div class="container">
             <div class="row">
-              <div class="col-md-8 offset-md-2">
-                {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible
-                  fade show" id="msg" role="alert">
-                  {{ message | safe }}
-                  <button type="button" class="btn-close"
-                    data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible fade show custom-alert" id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
-              </div>
             </div>
         </div>
     </header>
@@ -163,6 +161,8 @@
 
     <!-- Include Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src={%static 'js/script.js'%}></script>
+
 
 </body>
 
