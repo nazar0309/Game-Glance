@@ -259,16 +259,11 @@ h2 {
     background-color: #0056b3; /* Darker shade on hover */
 }
 
-/* Message alert styles */
 .custom-alert {
-    background-color: gray !important;
-    color: white !important;
+    z-index: 1050; /* Higher than typical elements, adjust if needed */
+    position: relative; /* Can be changed to fixed or absolute if necessary */
+    transition: opacity 0.5s ease; 
 }
-
-
-
-
-
 /* Ensure the grid layout adapts for smaller screens */
 @media (max-width: 1200px) {
     .games-container {

@@ -44,5 +44,15 @@ def game_detail(request, slug):
     )
     
     
+def search_games(request):
+    query = request.GET.get('q')  # Get the search query from the request
+    results = []
+
+    if query:
+        results = Game.objects.filter(name__icontains=query)  # Filter games by name
+
+    return render(request, 'your_template.html', {'results': results, 'query': query})
+    
+    
 
 
