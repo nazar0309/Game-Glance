@@ -65,12 +65,11 @@
 
                     <!-- Center: Search Bar -->
                     <div class="search-bar">
-                        <form class="d-flex" role="search" method="GET" action="{% url 'search_games' %}">
+                        <form class="d-flex" role="search" method="GET" action="{% url 'home' %}">
                             <input class="form-control me-2" type="search" name="q" placeholder="Find a game..." aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
                     </div>
-
 
                     <!-- Right-side: Login/Register Links -->
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -99,7 +98,6 @@
                 {{ message | safe }}
             </div>
         {% endfor %}
-        
     </header>
 
     {% block content %}

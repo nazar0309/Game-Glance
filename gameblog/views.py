@@ -1,15 +1,27 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from django.views import generic
 from .models import Game
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .forms import ReviewForm
+from django.core.paginator import Paginator
 
 
-class GameList(generic.ListView):
-    queryset = Game.objects.order_by('-created_on')
-    template_name = "gameblog/index.html"
-    paginate_by = 8
+def GameList(request):
+    queryset = Game.objects.order_by('-created_on')  # Get all games ordered by created_on
+    query = request.GET.get('q')  # Get the search query from the request
+    
+    if query:
+        queryset = queryset.filter(title__icontains=query)  # Filter games by the search query
+    
+    # Set up pagination
+    paginator = Paginator(queryset, 8)  # Show 8 games per page
+    page_number = request.GET.get('page')  # Get the page number from the URL query parameters
+    page_obj = paginator.get_page(page_number)  # Get the specific page of results
+
+    # Render the template with the paginated results and query
+    return render(request, "gameblog/index.html", {"page_obj": page_obj, "query": query, "is_paginated": paginator.num_pages > 1})
+    
+    
     
 def game_detail(request, slug):
     queryset = Game.objects.order_by('-created_on')
@@ -44,14 +56,6 @@ def game_detail(request, slug):
     )
     
     
-def search_games(request):
-    query = request.GET.get('q')  # Get the search query from the request
-    results = []
-
-    if query:
-        results = Game.objects.filter(name__icontains=query)  # Filter games by name
-
-    return render(request, 'gameblog/index.html', {'results': results, 'query': query})
     
     
 
