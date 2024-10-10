@@ -14,27 +14,18 @@
         <div class="reviews_grid">
             {% for review in reviews %}
             <div class="review_card">
-                <!-- Review Information -->
+                <!-- Review information at the top -->
                 <p><strong>{{ review.game.title }}</strong> - {{ review.created_on }}</p>
-                <p class="review_body">{{ review.body }}</p>
-                
-                <!-- Action Buttons -->
+                <p>{{ review.body }}</p>
+        
+                <!-- Buttons below the review content -->
                 <div class="review-actions">
-                    <form method="POST" class="delete-form">
-                        {% csrf_token %}
-                        <button class="delete_btn" review_id="{{ review.id }}" 
-                                style="background-color: red; color: white; padding: 8px 16px; border: none; cursor: pointer; margin-right: 10px;">
-                            Delete
-                        </button>
-                    </form>
-            
-                    <form method="POST" class="edit-form">
-                        {% csrf_token %}
-                        <button class="edit_btn" review_id="{{ review.id }}" 
-                                style="background-color: yellow; color: black; padding: 8px 16px; border: none; cursor: pointer;">
-                            Edit
-                        </button>
-                    </form>
+                    <button class="delete_btn" review_id="{{ review.id }}" style="background-color: red; color: white; padding: 8px 16px; border: none; cursor: pointer; margin-right: 10px;">
+                        Delete
+                    </button>
+                    <button class="edit_btn" review_id="{{ review.id }}" style="background-color: yellow; color: black; padding: 8px 16px; border: none; cursor: pointer;">
+                        Edit
+                    </button>
                 </div>
             </div>
             {% endfor %}

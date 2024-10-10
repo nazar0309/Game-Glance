@@ -14,6 +14,7 @@
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: #ccc 0px 0px 20px;
 }
 body {
     background-image: url('');
@@ -83,13 +84,14 @@ body {
 
 /* Styling for the text inside game description */
 .game_r_description h2 {
+    color: white;
     font-size: 24px;
     margin-bottom: 10px;
 }
 
 .game_r_description p {
     font-size: 16px;
-    color: #555;
+    color: white;
     margin-bottom: 10px;
 }
 
@@ -142,6 +144,7 @@ body {
 
 /* Each review card */
 .review_card {
+    box-shadow: #ccc 0px 0px 10px !important; /* Add shadow effect */
     background-color: white;          /* White background for the cards */
     color: #333;                      /* Dark text color */
     padding: 15px;
@@ -197,6 +200,10 @@ body {
 .user_welcome {
     margin: 20px 0;
     font-size: 24px;
+}
+
+.related_games h2 {
+    color: white !important;
 }
 
 

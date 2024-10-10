@@ -6,21 +6,32 @@ from .forms import ReviewForm
 from django.core.paginator import Paginator
 
 
+        
 def GameList(request):
     queryset = Game.objects.order_by('-created_on')  # Get all games ordered by created_on
     query = request.GET.get('q')  # Get the search query from the request
     
+    # Check if there is a search query
     if query:
-        queryset = queryset.filter(title__icontains=query)  # Filter games by the search query
-    
+        # Try to find an exact match first
+        try:
+            game = Game.objects.get(title__iexact=query)  # Try to get the exact match
+            return HttpResponseRedirect(reverse('game_detail', args=[game.slug]))  # Redirect to game detail if found
+        except Game.DoesNotExist:
+            # If no exact match, continue to filter for substring matches
+            queryset = queryset.filter(title__icontains=query)  # Filter games by the search query
+
     # Set up pagination
     paginator = Paginator(queryset, 8)  # Show 8 games per page
     page_number = request.GET.get('page')  # Get the page number from the URL query parameters
     page_obj = paginator.get_page(page_number)  # Get the specific page of results
 
     # Render the template with the paginated results and query
-    return render(request, "gameblog/index.html", {"page_obj": page_obj, "query": query, "is_paginated": paginator.num_pages > 1})
-    
+    return render(request, "gameblog/index.html", {
+        "page_obj": page_obj, 
+        "query": query, 
+        "is_paginated": paginator.num_pages > 1
+    }) 
     
     
 def game_detail(request, slug):
