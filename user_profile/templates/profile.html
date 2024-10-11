@@ -20,12 +20,18 @@
         
                 <!-- Buttons below the review content -->
                 <div class="review-actions">
-                    <button class="delete_btn" review_id="{{ review.id }}" style="background-color: red; color: white; padding: 8px 16px; border: none; cursor: pointer; margin-right: 10px;">
-                        Delete
-                    </button>
-                    <button class="edit_btn" review_id="{{ review.id }}" style="background-color: yellow; color: black; padding: 8px 16px; border: none; cursor: pointer;">
-                        Edit
-                    </button>
+                    <form method="POST" action="{% url 'delete_review' review.id %}" style="display: inline;">
+                        {% csrf_token %}
+                        <button class="delete_btn" style="background-color: red; color: white; padding: 8px 16px; border: none; cursor: pointer; margin-right: 10px;">
+                            Delete
+                        </button>
+                    </form>
+                    
+                    <a href="#">
+                        <button class="edit_btn" style="background-color: yellow; color: black; padding: 8px 16px; border: none; cursor: pointer;">
+                            Edit
+                        </button>
+                    </a>
                 </div>
             </div>
             {% endfor %}
