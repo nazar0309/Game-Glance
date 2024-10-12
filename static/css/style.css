@@ -16,9 +16,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: #ccc 0px 0px 20px;
 }
-body {
-    background-image: url('');
-}
+
 /* Game image */
 .game-image img {
     width: 100%;
@@ -238,7 +236,6 @@ body {
     background-image: url('../images/bg.jpg'); 
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the image */
-    background-repeat: no-repeat;
 }
 .about-container {
     display: flex; /* Use flexbox for layout */
@@ -299,6 +296,15 @@ h2 {
     z-index: 1050; /* Higher than typical elements, adjust if needed */
     position: relative; /* Can be changed to fixed or absolute if necessary */
     transition: opacity 0.5s ease; 
+}
+
+
+.reg-log-container {
+    margin: 20px auto; /* Center the container */
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    width: 50%;
+    padding: 20px;
 }
 /* Ensure the grid layout adapts for smaller screens */
 @media (max-width: 1200px) {

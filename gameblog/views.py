@@ -75,23 +75,20 @@ def delete_review(request, review_id):
     return redirect(profile_view)
 
 # View to edit a review
-#def edit_review(request, review_id):
-    #review = get_object_or_404(Review, id=review_id)
+def edit_review(request, review_id):
+    review = get_object_or_404(Review, id=review_id)
 
-    #if request.user != review.author:
-        #messages.error(request, "You are not allowed to edit this review.")
-        #return redirect('your_profile_view')  # Replace with your view
+    if request.method == "POST":
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your review has been updated.")
+            return redirect('profile_url')  # Redirect back to the profile page
+    else:
+        form = ReviewForm(instance=review)  # Pass the review instance to prepopulate the form
 
-    #if request.method == "POST":
-        #form = ReviewForm(request.POST, instance=review)
-        #if form.is_valid():
-            #form.save()
-            #messages.success(request, "Your review has been updated.")
-            #return redirect('your_profile_view')  # Replace with your view
-    #else:
-        #form = ReviewForm(instance=review)
-
-    #return render(request, 'gameblog/edit_review.html', {'form': form, 'review': review})
+    # Pass the review object and the form to the template
+    return render(request, 'edit_review.html', {'form': form, 'review': review})
     
     
     

@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 
-<div class='bg-container profile-container'>
+<div class='profile-container'>
 <div class=' user_welcome text-center text-white'>
     <p>Welcome, <strong>{{ user.username }}</strong></p>
     <p>Here you can see the reviews you have left below the games:</p>
@@ -27,7 +27,7 @@
                         </button>
                     </form>
                     
-                    <a href="#">
+                    <a href="{% url 'edit_review' review.id %}">
                         <button class="edit_btn" style="background-color: yellow; color: black; padding: 8px 16px; border: none; cursor: pointer;">
                             Edit
                         </button>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<div class='profile-container'>
+    <div class='user_welcome text-center text-white'>
+        <p>Welcome, <strong>{{ user.username }}</strong></p>
+        <p>Here you can edit your reviews:</p>
+    </div>
+    <div class="user_reviews_container">
+        <div class="user_reviews bg-dark text-white">
+            <h2>Chosen review for {{ review.game.title }}</h2> <!-- Assuming review has a related game -->
+            <form id="reviewForm" method="post" style="margin-top: 1.3em;">
+                {{ form|crispy }}  <!-- Change from review_form to form -->
+                {% csrf_token %}
+                <button id="submitButton" type="submit" class="btn btn-outline-success">Edit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
