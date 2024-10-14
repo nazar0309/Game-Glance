@@ -48,23 +48,23 @@
                     <span>GG</span>
                     <span><i class="fa-solid fa-gamepad"></i></span>
                 </a>
-
+        
                 <!-- Toggler for Mobile View -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
                         <i class="fas fa-bars text-light"></i> <!-- Icon for the toggler button -->
                     </span>
                 </button>
-
+        
                 <!-- Navbar Content -->
                 <div class="collapse navbar-collapse custom-collapse" id="navbarSupportedContent">
-                    <!-- Left-side: About Link -->
+                    <!-- Center the "About" link horizontally -->
                     <ul class="navbar-nav mb-2 mb-lg-0 mx-auto navbar-nav-center">
                         <li class="nav-item">
                             <a class="nav-link text-light" href="{% url 'about_url' %}">About</a>
                         </li>
                     </ul>
-
+        
                     <!-- Center: Search Bar -->
                     <div class="search-bar">
                         <form class="d-flex" role="search" method="GET" action="{% url 'home' %}">
@@ -72,8 +72,8 @@
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
                     </div>
-
-                    <!-- Right-side: Login/Register Links -->
+        
+                    <!-- Right-side: Login/Register Links, stacked vertically on mobile -->
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mx-auto navbar-nav-center">
                         {% if user.is_authenticated %}
                         <li class="nav-item">
@@ -94,6 +94,8 @@
                 </div>
             </div>
         </nav>
+        
+        
         {% for message in messages %}
             <div class="text-center text-white alert {{ message.tags }} alert-dismissible fade show custom-alert" role="alert" id="msg-{{ forloop.counter }}">
                 {{ message | safe }}
