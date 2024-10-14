@@ -51,13 +51,15 @@
 
                 <!-- Toggler for Mobile View -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon">
+                        <i class="fas fa-bars text-light"></i> <!-- Icon for the toggler button -->
+                    </span>
                 </button>
 
                 <!-- Navbar Content -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse custom-collapse" id="navbarSupportedContent">
                     <!-- Left-side: About Link -->
-                    <ul class="navbar-nav mb-2 mb-lg-0">
+                    <ul class="navbar-nav mb-2 mb-lg-0 mx-auto navbar-nav-center">
                         <li class="nav-item">
                             <a class="nav-link text-light" href="{% url 'about_url' %}">About</a>
                         </li>
@@ -72,21 +74,20 @@
                     </div>
 
                     <!-- Right-side: Login/Register Links -->
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mx-auto navbar-nav-center">
                         {% if user.is_authenticated %}
-                        <li class = 'nav-item'>
-                            <a class = 'nav-link text-light' href="{% url 'profile_url' %}">{{user.username}}</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="{% url 'profile_url' %}">{{user.username}}</a>
                         </li>
                         <li class="nav-item">
-	                        <a class="nav-link text-light {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                            <a class="nav-link text-light {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
-	                        <a class="nav-link text-light {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-		                        href="{% url 'account_signup' %}">Register</a>
+                            <a class="nav-link text-light {% if request.path == signup_url %}active{% endif %}" aria-current="page" href="{% url 'account_signup' %}">Register</a>
                         </li>
                         <li class="nav-item">
-	                        <a class="nav-link text-light {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                            <a class="nav-link text-light {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
                         </li>
                         {% endif %}
                     </ul>
@@ -94,7 +95,7 @@
             </div>
         </nav>
         {% for message in messages %}
-            <div class=" text-center alert {{ message.tags }} alert-dismissible fade show custom-alert" role="alert" id="msg-{{ forloop.counter }}">
+            <div class="text-center text-white alert {{ message.tags }} alert-dismissible fade show custom-alert" role="alert" id="msg-{{ forloop.counter }}">
                 {{ message | safe }}
             </div>
         {% endfor %}
@@ -103,18 +104,19 @@
     {% block content %}
     {% endblock content %}
 
+
     <!-- Footer -->
-    <footer class="footer mt-auto py-2 bg-dark text-light">
+    <footer class="footer mt-auto py-4 bg-dark text-light">
         <div class="container">
             <div class="row">
                 <!-- Logo/Brand Section -->
-                <div class="col-md-3 d-flex flex-column align-items-start justify-content-center">
+                <div class="col-12 col-md-3 mb-4 mb-md-0 d-flex flex-column align-items-center align-items-md-start justify-content-center text-center text-md-start">
                     <h5>GG</h5>
                     <p>Your source for the latest gaming news.</p>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="col-md-3 d-flex flex-column align-items-start justify-content-center">
+                <div class="col-12 col-md-3 mb-4 mb-md-0 d-flex flex-column align-items-center align-items-md-start justify-content-center text-center text-md-start">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="{% url 'home' %}" class="text-light">Home</a></li>
@@ -125,7 +127,7 @@
                 </div>
 
                 <!-- Social Media Links -->
-                <div class="col-md-3 d-flex flex-column align-items-start justify-content-center">
+                <div class="col-12 col-md-3 mb-4 mb-md-0 d-flex flex-column align-items-center align-items-md-start justify-content-center text-center text-md-start">
                     <h5>Follow Us</h5>
                     <ul class="list-unstyled">
                         <li><a href="#" class="text-light"><i class="fab fa-facebook"></i> Facebook</a></li>
@@ -135,7 +137,7 @@
                 </div>
 
                 <!-- Contact Information -->
-                <div class="col-md-3 d-flex flex-column align-items-start justify-content-center">
+                <div class="col-12 col-md-3 d-flex flex-column align-items-center align-items-md-start justify-content-center text-center text-md-start">
                     <h5>Contact Us</h5>
                     <p>Email: info@gg.com</p>
                     <p>Phone: +123 456 789</p>
@@ -144,20 +146,22 @@
 
             <hr class="bg-light m-0">
 
+            <!-- Copyright Row -->
             <div class="row">
-                <div class="col text-center">
+                <div class="col text-center mt-2">
                     <p>&copy; 2024 GG - All Rights Reserved</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Include Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src={%static 'js/script.js'%}></script>
+    <!-- Bootstrap JS with Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-
+    <!-- Custom JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>
+
 

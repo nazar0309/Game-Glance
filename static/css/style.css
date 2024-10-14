@@ -67,7 +67,7 @@
 
 /* Styling for the game image */
 .game_r_image img {
-    width: 300px;                
+    width: 900px;                
     height: auto;                 
     border-radius: 8px;          
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
@@ -293,9 +293,22 @@ h2 {
 }
 
 .custom-alert {
-    z-index: 1050; /* Higher than typical elements, adjust if needed */
-    position: relative; /* Can be changed to fixed or absolute if necessary */
-    transition: opacity 0.5s ease; 
+    width: 30%;                                 /* Take 30% of the screen width */
+    margin: 20px auto;                             /* Center the alert horizontally */
+    background-color: rgba(0, 0, 0, 0.5) !important; /* Force background with 50% opacity */
+    color: white;                               /* Text color */
+    border-radius: 8px;                         /* Optional: Rounded corners */
+    padding: 10px 20px;                         /* Optional: Some padding for a better look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   /* Optional: Add some shadow for depth */
+}
+
+/* Responsive adjustments for video */
+.w-100 {
+    width: 100%;
+}
+
+.w-lg-900 {
+    width: 900px;
 }
 
 
@@ -314,8 +327,39 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    .navbar .search-bar .form-control {
+        width: 200px !important /* Smaller search bar on mobile */
+    }
+
+    .navbar-nav-center {
+        justify-content: center; /* Center nav links on mobile */
+        width: 100% !important; /* Full width to center content */
+    }
     .games-container {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .reviews_container .add_review, 
+    .reviews_container .last_reviews {
+        margin-bottom: 1.5em; /* Add some space between the reviews and the form */
+        width: 100%; /* Ensure full width on small screens */
+    }
+    .game_r_detail {
+        flex-direction: column; 
+    }
+    .game_r_image {
+        width: 100%; /* Full width for the image */
+    }
+    .game_r_description {
+        width: 70%;
+    }
+    .about-content {
+        flex-direction: column; /* Stack the content vertically */
+    }
+    .about-content .content-left, .content-right {
+        width: 100%; /* Full width for both sections */
+    }
+    .about-content .content-left {
+        align-items: center; /* Center the content */
     }
 }
 

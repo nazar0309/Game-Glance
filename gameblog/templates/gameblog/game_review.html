@@ -3,14 +3,16 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-
 <div class='game_r_detail'>
+    <!-- Video Section -->
     <div class='game_r_image'>
-        <iframe width="900" height="650"
+        <iframe class="w-100 w-lg-900" height="400"
         src="https://www.youtube.com/embed/{{ game.youtube_url|slice:'-11:' }}?autoplay=1&mute=1"
         frameborder="0" allowfullscreen>
         </iframe>
     </div>
+
+    <!-- Game Info Section -->
     <div class='game_r_description'>
         <h2>{{ game.title }}</h2>
         <p><strong>Company:</strong> {{ game.company }}</p>
@@ -19,6 +21,7 @@
     </div>
 </div>
 
+<!-- Reviews Section -->
 <div class='reviews_container'>
     <div class='last_reviews bg-dark text-white'>
         <h2>Last Reviews</h2>
@@ -32,9 +35,11 @@
             {% endfor %}
         </div>
         {% else %}
-        <p>No reviews yet. You can be the fisrt!</p>
+        <p>No reviews yet. You can be the first!</p>
         {% endif %}
     </div>
+
+    <!-- Add Review Form -->
     <div class='add_review bg-dark text-white'>
         {% if user.is_authenticated %}
         <h2 class='text-white'>Leave Review:</h2>
@@ -50,11 +55,11 @@
     </div>
 </div>
 
+<!-- Related Games Section -->
 <div class='related_games text-center'>
     <h2>Related Games</h2>
-    
     <div class='games-container'>
-     {% for game in related_games %}
+        {% for game in related_games %}
         <div class='game'>
             <div class='game-image'>
                 <img src="{{ game.image.url }}" alt="{{ game.title }}">
@@ -64,11 +69,13 @@
                 <a href="{% url 'game_detail' game.slug %}">View game</a>
             </div>
         </div>
-     {% endfor %}  
+        {% endfor %}
     </div>
 </div>
 
 {% endblock %}
+
+
 
 
 
