@@ -389,6 +389,22 @@ h2 {
     .about-content .content-left {
         align-items: center; /* Center the content */
     }
+    .footer h5 {
+        font-size: 1.25rem; /* Smaller font size for footer headings */
+    }
+
+    .footer p, .footer a {
+        font-size: 0.85rem; /* Smaller font size for text and links */
+    }
+
+    .footer ul li a {
+        font-size: 0.85rem; /* Ensure that the links inside lists are smaller */
+    }
+
+    .footer .container {
+        padding-left: 15px; /* Add some padding for better spacing */
+        padding-right: 15px;
+    }
 }
 
 @media (max-width: 576px) {
