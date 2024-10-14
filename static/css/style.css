@@ -128,9 +128,8 @@
     flex-direction: column;
     justify-content: space-between;
 }
-
 .profile-container {
-    min-height: 100vh;
+    margin-bottom: 40px;
 }
 /* Reviews grid: places cards in a row */
 .reviews_grid {
@@ -263,6 +262,8 @@
     background-color: rgba(255, 255, 255, 0.6);
 }
 
+
+
 h2 {
     color: #222; /* Consistent header color */
     margin-top: 20px;
@@ -291,7 +292,9 @@ h2 {
 .btn:hover {
     background-color: #0056b3; /* Darker shade on hover */
 }
-
+.asteriskField {
+    display: none;
+}
 .custom-alert {
     width: 30%;                                 /* Take 30% of the screen width */
     margin: 20px auto;                             /* Center the alert horizontally */
@@ -301,6 +304,7 @@ h2 {
     padding: 10px 20px;                         /* Optional: Some padding for a better look */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   /* Optional: Add some shadow for depth */
 }
+
 
 /* Responsive adjustments for video */
 .w-100 {
@@ -319,6 +323,10 @@ h2 {
     width: 50%;
     padding: 20px;
 }
+
+.form-control {
+    width: 70%;
+}
 /* Ensure the grid layout adapts for smaller screens */
 @media (max-width: 1200px) {
     .games-container {
@@ -327,6 +335,26 @@ h2 {
 }
 
 @media (max-width: 768px) {
+
+    #div_id_name, #div_id_email, #div_id_message {
+        flex-direction: column;
+        display: flex !important;
+        align-items: center !important;
+        width: 100%; /* Full width for input fields */
+        max-width: 400px; /* Keep the input fields' maximum width the same */
+    }
+
+    #div_id_name input, #div_id_email input, #div_id_message textarea {
+        width: 100%; /* Ensure inputs take full width but respect max-width */
+    }
+   
+
+    #div_id_name, #div_id_email, #div_id_message {
+        flex-direction: column;
+        display: flex !important;
+        align-items: center !important;
+    }
+
     /* Adjust the search bar width for smaller screens */
     .navbar .search-bar .form-control {
         width: 200px !important; /* Smaller search bar on mobile */
@@ -385,6 +413,15 @@ h2 {
     }
     .about-content .content-left, .content-right {
         width: 100%; /* Full width for both sections */
+    }
+    .content-right {
+        display: flex;
+        justify-content: center; /* Center the content */
+        align-items: center;
+        flex-direction: column;
+    }
+    .form-control {
+        width: 100%; /* Full width for form controls */
     }
     .about-content .content-left {
         align-items: center; /* Center the content */
