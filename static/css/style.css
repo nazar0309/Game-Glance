@@ -66,18 +66,21 @@
 }
 
 /* Styling for the game image */
-.game_r_image img {
-    width: 900px;                
-    height: auto;                 
+.game_r_image {
+    height: auto;
+    width: 60%;                               
     border-radius: 8px;          
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
-    margin-right: 20px;     
+    margin: 20px; 
 }     
 
 /* Styling for the game description */
 .game_r_description {
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Black with 30% opacity */
     flex: 1;                      /* Allows this section to take remaining space */
     padding: 20px;
+    margin-right: 20px;
 }
 
 /* Styling for the text inside game description */
