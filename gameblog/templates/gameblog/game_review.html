@@ -28,7 +28,7 @@
         {% if reviews|length != 0 %}
         <div class="reviews_grid">
             {% for review in reviews %}
-            <div class='review_card'>
+            <div class='review_card text-center'>
                 <p><strong>{{ review.user }}</strong> - {{ review.created_on }}</p>
                 <p>{{ review.body }}</p>
             </div>
@@ -47,7 +47,9 @@
         <form id="reviewForm" method="post" style="margin-top: 1.3em;">
             {{ review_form | crispy }}
             {% csrf_token %}
-            <button id="submitButton" type="submit" class="btn btn-outline-success">Submit</button>
+            <div class='sub_btn text-center'>
+                <button id="submitButton" type="submit" class="btn btn-outline-success">Submit</button>
+            </div>
         </form>
         {% else %}
         <p>Log in to leave a review</p>

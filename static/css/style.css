@@ -101,22 +101,23 @@
 .reviews_container {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
     margin: 30px;
+    background-color: rgba(0, 0, 0, 0.7); /* Black with 30% opacity */
 }
 
 /* Last Reviews section */
 .last_reviews {
+    margin: 0 20px;
+    height: fit-content;
     align-items: center;
     flex-basis: 65%;                 /* Takes up 65% of the container width */
-    margin-right: 40px;              /* Adds space between the two sections */
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 /* Add Review section */
@@ -134,12 +135,28 @@
 .profile-container {
     margin-bottom: 40px;
 }
+#reviewForm { 
+    flex-direction: column;
+    display: flex;
+    margin-top: 1.3em;
+}
+#div_id_body label {
+    display: none;
+}
+#div_id_body {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
 /* Reviews grid: places cards in a row */
 .reviews_grid {
+    margin-top: 20px;
     width: 100%;
-    display: flex;
     flex-direction: column;  /* Stack the cards vertically */
-    gap: 15px;               /* Adds space between review cards */
+    gap: 15px;      
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between review cards */         /* Adds space between review cards */
 }
 
 /* Each review card */
@@ -158,6 +175,7 @@
 .last_reviews h2, .add_review h2 {
     font-size: 24px;
     margin-bottom: 15px;
+    color: white !important;
 }
 
 /* Container for reviews */
@@ -177,12 +195,6 @@
 }
 .user_reviews h2 {
     color: white !important;
-}
-/* Review cards in a grid layout */
-.reviews_grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Space between review cards */
 }
 
 /* Individual review card styling */
@@ -352,7 +364,11 @@ h2 {
 }
 @media (max-width: 768px) {
 
-
+    .col_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     #div_id_name, #div_id_email, #div_id_message {
         flex-direction: column;
@@ -412,10 +428,19 @@ h2 {
     .games-container {
         grid-template-columns: repeat(2, 1fr);
     }
+    .reviews_container {
+        flex-direction: column;
+    }
     .reviews_container .add_review, 
     .reviews_container .last_reviews {
         margin-bottom: 1.5em; /* Add some space between the reviews and the form */
         width: 100%; /* Ensure full width on small screens */
+    }
+    .reviews_grid {
+        display: flex !important; /* Stack the reviews vertically */
+    }
+    .last_reviews {
+        margin: 0;
     }
     .game_r_detail {
         flex-direction: column; 

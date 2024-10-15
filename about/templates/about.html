@@ -41,8 +41,10 @@
             <form class='about-form text-white' method="post">
                 {{ collaborate_form | crispy }}
                 {% csrf_token %}
-                <button class="btn btn-secondary" 
-                  type="submit">Submit</button>
+                <div class ='col_btn'>
+                    <button class="btn btn-secondary" 
+                    type="submit">Submit</button>
+                </div>
             </form>
         </div>
     </div>
