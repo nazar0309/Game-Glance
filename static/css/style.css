@@ -352,6 +352,8 @@ h2 {
 }
 @media (max-width: 768px) {
 
+
+
     #div_id_name, #div_id_email, #div_id_message {
         flex-direction: column;
         display: flex !important;
@@ -420,9 +422,11 @@ h2 {
     }
     .game_r_image {
         width: 100%; /* Full width for the image */
+        margin: 0;
     }
     .game_r_description {
-        width: 70%;
+        width: 100%;
+        margin: 0;
     }
     .about-content {
         flex-direction: column; /* Stack the content vertically */
