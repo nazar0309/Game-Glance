@@ -333,7 +333,20 @@ h2 {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+/* Ensure that for screens between 768px and 992px, navbar links are centered */
+@media (min-width: 768px) and (max-width: 992px) {
+    .navbar-nav-center {
+        display: flex;
+        justify-content: center !important; /* Center horizontally */
+        align-items: center !important;     /* Center vertically if needed */
+        width: 100%;                        /* Ensure full width */
+    }
 
+    .navbar-nav-center .nav-item {
+        margin-left: auto !important;       /* Ensure the links are not pushed to the left */
+        margin-right: auto !important;      /* Ensure the links are not pushed to the right */
+    }
+}
 @media (max-width: 768px) {
 
     #div_id_name, #div_id_email, #div_id_message {
