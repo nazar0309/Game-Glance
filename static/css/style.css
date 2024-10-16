@@ -135,10 +135,19 @@
 .profile-container {
     margin-bottom: 40px;
 }
-#reviewForm { 
+.ed_btn {
+    display: flex;
+    justify-content: center;
+}
+.ed_btn button {
+    width: 30%;
+}
+#reviewForm {
     flex-direction: column;
     display: flex;
     margin-top: 1.3em;
+    width: 75%;
+    max-width: 500px;
 }
 #div_id_body label {
     display: none;
@@ -187,10 +196,14 @@
 
 /* The reviews section itself */
 .user_reviews {
-    width: 80%; /* Adjust as needed */
-    max-width: 800px; /* Limits the width of the reviews section */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 80%;
+    max-width: 800px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a nice shadow effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 .user_reviews h2 {
@@ -486,6 +499,10 @@ h2 {
     .footer .container {
         padding-left: 15px; /* Add some padding for better spacing */
         padding-right: 15px;
+    }
+    .user_reviews h2 {
+        font-size: 1rem; /* Smaller font size for the heading */
+        
     }
 }
 

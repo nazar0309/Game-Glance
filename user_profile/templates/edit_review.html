@@ -14,7 +14,9 @@
             <form id="reviewForm" method="post" style="margin-top: 1.3em;">
                 {{ form|crispy }}  <!-- Change from review_form to form -->
                 {% csrf_token %}
-                <button id="submitButton" type="submit" class="btn btn-outline-success">Edit</button>
+                <div class='ed_btn'>
+                    <button id="submitButton" type="submit" class="btn btn-outline-success">Edit</button>
+                </div>
             </form>
         </div>
     </div>
