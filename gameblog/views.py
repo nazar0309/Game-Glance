@@ -16,6 +16,8 @@ def GameList(request):
     if query:
         # Try to find an exact match first
         try:
+            query = query.strip()  # Remove any leading/trailing whitespace
+            query = query.lower()  # Convert the query to lowercase
             game = Game.objects.get(title__iexact=query)  # Try to get the exact match
             return HttpResponseRedirect(reverse('game_detail', args=[game.slug]))  # Redirect to game detail if found
         except Game.DoesNotExist:
