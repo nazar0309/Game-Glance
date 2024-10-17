@@ -95,6 +95,37 @@ def edit_review(request, review_id):
 
     # Pass the review object and the form to the template
     return render(request, 'edit_review.html', {'form': form, 'review': review})
+
+def game_reviews_all(request, slug):
+    queryset = Game.objects.order_by('-created_on')
+    game = get_object_or_404(queryset, slug=slug)
+    reviews = game.reviews.all().order_by('-created_on')
+    related_games = Game.objects.filter(genre=game.genre).order_by('-created_on')[:5]
+    
+    if request.method == "POST":
+        print('Getting the POST request...')
+        review_form = ReviewForm(data=request.POST)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.author = request.user
+            review.game = game
+            review.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Review submitted and awaiting approval'
+                )
+
+    review_form = ReviewForm()
+    print('Rendering template...')
+    return render(
+        request,
+        "gameblog/game_reviews_all.html",
+         {"game": game,
+         "reviews": reviews,
+         'related_games': related_games,
+         "review_form": review_form
+        },
+    )
     
     
     

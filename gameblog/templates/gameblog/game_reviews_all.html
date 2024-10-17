@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% url 'game_detail' as detail_game %}
+{% url 'game_reviews_all' as all_reviews%}
+
+<div class='game_r_detail'>
+    <!-- Video Section -->
+    <div class='game_r_image'>
+        <iframe class="w-100 w-lg-900" height="550"
+        src="https://www.youtube.com/embed/{{ game.youtube_url|slice:'-11:' }}?autoplay=1&mute=1"
+        frameborder="0" allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Game Info Section -->
+    <div class='game_r_description'>
+        <h2>{{ game.title }}</h2>
+        <p><strong>Company:</strong> {{ game.company }}</p>
+        <p><strong>Release Date:</strong> {{ game.release_date }}</p>
+        <p>{{ game.description }}</p>
+    </div>
+</div>
+
+<div class='all_reviews_container'>
+    <!-- Reviews Section -->
+    <div class='reviews_container'>
+        <div class='last_reviews bg-dark text-white'>
+            <h2>All Reviews of {{game.title}}</h2>
+            {% if reviews|length != 0 %}
+            <div class="reviews_grid">
+                {% for review in reviews %}
+                <div class='review_card text-center'>
+                    <p><strong>{{ review.author }}</strong> - {{ review.created_on }}</p>
+                    <p>{{ review.body }}</p>
+                    {%if review.author == request.user%}
+                        <p><strong>that is your review</strong></p>
+                        <div class="review-actions">
+                            <form method="POST" action="{% url 'delete_review' review.id %}" style="display: inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{% url 'game_reviews_all' game.slug %}">
+                                <button class="delete_btn" style="background-color: red; color: white; padding: 8px 16px; border: none; cursor: pointer; margin-right: 10px;">
+                                    Delete
+                                </button>
+                            </form>
+                            
+                            <a href="{% url 'edit_review' review.id %}">
+                                
+                                <button class="edit_btn" style="background-color: yellow; color: black; padding: 8px 16px; border: none; cursor: pointer;">
+                                    Edit
+                                </button>
+                            </a>
+                        </div>
+                    {%endif%}
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>No reviews yet. You can be the first!</p>
+            {% endif %}
+        </div>
+        <div class='add_review bg-dark text-white'>
+            {% if user.is_authenticated %}
+            <h2 class='text-white'>Leave Review:</h2>
+            <p>Posting as: {{ user.username }}</p>
+            <form id="reviewForm" method="post" style="margin-top: 1.3em;">
+                {{ review_form | crispy }}
+                {% csrf_token %}
+                <div class='sub_btn text-center'>
+                    <button id="submitButton" type="submit" class="btn btn-outline-success">Submit</button>
+                </div>
+            </form>
+            {% else %}
+            <p>Log in to leave a review</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Related Games Section -->
+    <div class='related_games text-center'>
+        <h2>Related Games</h2>
+        <div class='games-container'>
+            {% for game in related_games %}
+            <div class='game'>
+                <div class='game-image'>
+                    <img src="{{ game.image.url }}" alt="{{ game.title }}">
+                </div>
+                <div class='game-info'>
+                    <h2>{{ game.title }}</h2>
+                    <a href="{% url 'game_detail' game.slug %}">View game</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -3,6 +3,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% url 'game_detail' as detail_game %}
+{% url 'game_reviews_all' as all_reviews%}
 
 <div class='game_r_detail'>
     <!-- Video Section -->
@@ -50,14 +51,14 @@
                             </button>
                         </a>
                     </div>
-                    <div class='all_reviews'>
-                        <a href="{% url 'all_reviews' game.slug %}">
-                            See All Reviews
-                        </a>
-                    </div>
                 {%endif%}
             </div>
             {% endfor %}
+        </div>
+        <div class='all_reviews' style='margin: 10px 0;'>
+            <a href="{% url 'game_reviews_all' game.slug %}">
+                <button id="submitButton" type="submit" class="btn btn-outline-success">See all Reviews</button>
+            </a>
         </div>
         {% else %}
         <p>No reviews yet. You can be the first!</p>
