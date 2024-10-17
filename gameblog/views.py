@@ -74,7 +74,11 @@ def delete_review(request, review_id):
     review = get_object_or_404(Review, id=review_id)
     review.delete()
     messages.success(request, "Your review has been deleted.")
-    return redirect(profile_view)
+
+    # Get the next URL from the form (which page the request originated from)
+    next_url = request.POST.get('next', 'profile_view')  # Default to 'profile_view' if 'next' is not provided
+
+    return redirect(next_url)
 
 # View to edit a review
 def edit_review(request, review_id):

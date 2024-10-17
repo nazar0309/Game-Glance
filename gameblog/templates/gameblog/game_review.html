@@ -2,6 +2,7 @@
 {% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
+{% url 'game_detail' as detail_game %}
 
 <div class='game_r_detail'>
     <!-- Video Section -->
@@ -29,8 +30,27 @@
         <div class="reviews_grid">
             {% for review in reviews %}
             <div class='review_card text-center'>
-                <p><strong>{{ review.user }}</strong> - {{ review.created_on }}</p>
+                <p><strong>{{ review.author }}</strong> - {{ review.created_on }}</p>
                 <p>{{ review.body }}</p>
+                {%if review.author == request.user%}
+                    <p>that is yours review</p>
+                    <div class="review-actions">
+                        <form method="POST" action="{% url 'delete_review' review.id %}" style="display: inline;">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{% url 'game_detail' game.slug %}">
+                            <button class="delete_btn" style="background-color: red; color: white; padding: 8px 16px; border: none; cursor: pointer; margin-right: 10px;">
+                                Delete
+                            </button>
+                        </form>
+                        
+                        <a href="{% url 'edit_review' review.id %}">
+                            
+                            <button class="edit_btn" style="background-color: yellow; color: black; padding: 8px 16px; border: none; cursor: pointer;">
+                                Edit
+                            </button>
+                        </a>
+                    </div>
+                {%endif%}
             </div>
             {% endfor %}
         </div>

@@ -10,7 +10,7 @@
 </div>
 <div class="user_reviews_container">
     <div class="user_reviews bg-dark text-white">
-        <h2>Your Reviews</h2>
+        <h2 style='margin-bottom: 20px;'>Your Reviews</h2>
         <div class="search-bar">
             <form class="d-flex" role="search" method="GET" action="{% url 'profile_url' %}">
                 <input class="form-control me-2" type="search" name="q" placeholder="Find a review..." aria-label="Search">
@@ -29,6 +29,7 @@
                 <div class="review-actions">
                     <form method="POST" action="{% url 'delete_review' review.id %}" style="display: inline;">
                         {% csrf_token %}
+                        <input type="hidden" name="next" value="{% url 'profile_url' %}">
                         <button class="delete_btn" style="background-color: red; color: white; padding: 8px 16px; border: none; cursor: pointer; margin-right: 10px;">
                             Delete
                         </button>
@@ -45,7 +46,7 @@
             {% endfor %}
         </div>
         {% else %}
-        <p>{{info}}</p>
+        <p style="margin-top: 10px;">{{info}}</p>
         {% endif %}
     </div>
 </div>
