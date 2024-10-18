@@ -34,7 +34,7 @@
                 <p><strong>{{ review.author }}</strong> - {{ review.created_on }}</p>
                 <p>{{ review.body }}</p>
                 {%if review.author == request.user%}
-                    <p><strong>that is your review</strong></p>
+                    <p><strong>this is your review</strong></p>
                     <div class="review-actions">
                         <form method="POST" action="{% url 'delete_review' review.id %}" style="display: inline;">
                             {% csrf_token %}

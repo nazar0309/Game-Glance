@@ -5,7 +5,7 @@ from gameblog.models import Game, Review
 
 def profile_view(request):
     games = Game.objects.all()  # Fetch all games
-    user_reviews = Review.objects.filter(author=request.user)  # Fetch reviews by the logged-in user
+    user_reviews = Review.objects.filter(author=request.user).order_by('-created_on')
     query = request.GET.get('q')  # Get the search query from the request
     
     # Initialize reviews to user's reviews if no query is made
