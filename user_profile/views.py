@@ -2,12 +2,13 @@ from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 from django.shortcuts import render
 from gameblog.models import Game, Review
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def profile_view(request):
     games = Game.objects.all()  # Fetch all games
     user_reviews = Review.objects.filter(author=request.user).order_by('-created_on')
     query = request.GET.get('q')  # Get the search query from the request
-    
     # Initialize reviews to user's reviews if no query is made
     reviews = user_reviews  # By default, display all user reviews if no query is made
     info = 'You have not reviewed any games yet.'  # Default message if user has not reviewed any games

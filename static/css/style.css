@@ -260,9 +260,10 @@
 
 
 .bg-container {
-    background-image: url('../images/bg.jpg'); 
+    background-image: url('../images/gg_bg.jpg'); 
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the image */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 .about-container {
     display: flex; /* Use flexbox for layout */
@@ -360,6 +361,17 @@ h2 {
     display: flex;
     flex-direction: column;
 }
+.refuse_div {
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-direction: column;
+}
+.refuse_btns {
+    margin-top: 20px;
+}
 /* Ensure the grid layout adapts for smaller screens */
 @media (max-width: 1200px) {
     .games-container {
@@ -381,7 +393,13 @@ h2 {
     }
 }
 @media (max-width: 768px) {
-
+    .refuse_div h2 {
+        font-size: 1.2rem;
+        
+    }
+    .refuse_btns a button {
+        font-size: 1rem;
+    }
     .col_btn {
         display: flex;
         align-items: center;

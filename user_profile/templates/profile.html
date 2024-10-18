@@ -3,54 +3,75 @@
 {% load static %}
 {% url 'profile_url' as url_profile %}
 
-<div class='profile-container'>
-<div class=' user_welcome text-center text-white'>
-    <p>Welcome, <strong>{{ user.username }}</strong></p>
-    <p>Here you can see the reviews you have left below the games:</p>
-</div>
-<div class="user_reviews_container">
-    <div class="user_reviews bg-dark text-white">
-        <h2 style='margin-bottom: 20px;'>Your Reviews</h2>
-        <div class="search-bar">
-            <form class="d-flex" role="search" method="GET" action="{% url 'profile_url' %}">
-                <input class="form-control me-2" type="search" name="q" placeholder="Find a review..." aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+
+{%if request.user.is_authenticated %}
+    <div class='profile-container'>
+        <div class=' user_welcome text-center text-white'>
+            <p>Welcome, <strong>{{ user.username }}</strong></p>
+            <p>Here you can see the reviews you have left below the games:</p>
         </div>
-        {% if reviews|length != 0 %}
-        <div class="reviews_grid">
-            {% for review in reviews %}
-            <div class="review_card">
-                <!-- Review information at the top -->
-                <p><strong>{{ review.game.title }}</strong> - {{ review.created_on }}</p>
-                <p>{{ review.body }}</p>
-        
-                <!-- Buttons below the review content -->
-                <div class="review-actions">
-                    <form method="POST" action="{% url 'delete_review' review.id %}" style="display: inline;">
-                        {% csrf_token %}
-                        <input type="hidden" name="next" value="{% url 'profile_url' %}">
-                        <button class="delete_btn" style="background-color: red; color: white; padding: 8px 16px; border: none; cursor: pointer; margin-right: 10px;">
-                            Delete
-                        </button>
+        <div class="user_reviews_container">
+            <div class="user_reviews bg-dark text-white">
+                <h2 style='margin-bottom: 20px;'>Your Reviews</h2>
+                <div class="search-bar">
+                    <form class="d-flex" role="search" method="GET" action="{% url 'profile_url' %}">
+                        <input class="form-control me-2" type="search" name="q" placeholder="Find a review..." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
-                    
-                    <a href="{% url 'edit_review' review.id %}">
-                        
-                        <button class="edit_btn" style="background-color: yellow; color: black; padding: 8px 16px; border: none; cursor: pointer;">
-                            Edit
-                        </button>
-                    </a>
                 </div>
+                {% if reviews|length != 0 %}
+                <div class="reviews_grid">
+                    {% for review in reviews %}
+                    <div class="review_card">
+                        <!-- Review information at the top -->
+                        <p><strong>{{ review.game.title }}</strong> - {{ review.created_on }}</p>
+                        <p>{{ review.body }}</p>
+                
+                        <!-- Buttons below the review content -->
+                        <div class="review-actions">
+                            <form method="POST" action="{% url 'delete_review' review.id %}" style="display: inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{% url 'profile_url' %}">
+                                <button class="delete_btn" style="background-color: red; color: white; padding: 8px 16px; border: none; cursor: pointer; margin-right: 10px;">
+                                    Delete
+                                </button>
+                            </form>
+                            
+                            <a href="{% url 'edit_review' review.id %}">
+                                
+                                <button class="edit_btn" style="background-color: yellow; color: black; padding: 8px 16px; border: none; cursor: pointer;">
+                                    Edit
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p style="margin-top: 10px;">{{info}}</p>
+                {% endif %}
             </div>
-            {% endfor %}
         </div>
-        {% else %}
-        <p style="margin-top: 10px;">{{info}}</p>
-        {% endif %}
     </div>
-</div>
-</div>
+{% else %}
+    <div class='refuse_div'>
+        <div>
+            <h2 class='text-center text-white'>You are not allowed to see this page</h2>
+        </div>
+        <div class='refuse_btns text-center'>
+            <a href="{% url 'home' %}">
+                <button id="submitButton" type="submit" class="btn btn-outline-success">Homepage</button>
+            </a>
+            <a href="{% url 'home' %}">
+                <button id="account_login" type="submit" class="btn btn-outline-success">Log In</button>
+            </a>
+            <a href="{% url 'home' %}">
+                <button id="account_signup" type="submit" class="btn btn-outline-success">Sign Up</button>
+            </a>
+        </div>
+    </div>
+{% endif %}
+
 
 {% endblock %}
 
