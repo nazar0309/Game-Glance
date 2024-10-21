@@ -34,13 +34,13 @@
                 <div class='review_card text-center'>
                     <p><strong>{{ review.author }}</strong> - {{ review.created_on }}</p>
                     <p>{{ review.body }}</p>
-                    {%if review.author == request.user%}
+                    {% if review.author == request.user %}
                         <p><strong>this is your review</strong></p>
                         <div class="review-actions">
                             <form method="POST" action="{% url 'delete_review' review.id %}" style="display: inline;">
                                 {% csrf_token %}
                                 <input type="hidden" name="next" value="{% url 'game_reviews_all' game.slug %}">
-                                <button class="delete_btn" style="background-color: red; color: white; padding: 8px 16px; border: none; cursor: pointer; margin-right: 10px;">
+                                <button type="button" class="delete_btn"> 
                                     Delete
                                 </button>
                             </form>

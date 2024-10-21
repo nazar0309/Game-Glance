@@ -233,12 +233,41 @@
 
 
 .delete_btn {
-    background-color: red;
+    background-color: red; /* Initial background color */
     color: white;
     padding: 8px 16px;
     border: none;
     cursor: pointer;
     margin-right: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+    border-radius: 4px;
+}
+
+.delete_btn:hover {
+    background-color: darkred; /* Darker shade of red on hover */
+}
+
+.edit_btn {
+    background-color: yellow; /* Initial background color */
+    color: black;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+    border-radius: 4px;
+}
+
+.edit_btn:hover {
+    background-color: goldenrod; /* Darker shade of yellow on hover */
+}
+
+.nav-link {
+    color: white !important; /* Default color */
+    transition: color 0.3s ease !important; /* Smooth transition effect */
+}
+
+.nav-link:hover {
+    color: gray !important; /* Change color to gray on hover */
 }
 
 .delete_btn:hover {

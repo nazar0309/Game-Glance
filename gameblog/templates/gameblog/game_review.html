@@ -39,14 +39,14 @@
                         <form method="POST" action="{% url 'delete_review' review.id %}" style="display: inline;">
                             {% csrf_token %}
                             <input type="hidden" name="next" value="{% url 'game_detail' game.slug %}">
-                            <button class="delete_btn" style="background-color: red; color: white; padding: 8px 16px; border: none; cursor: pointer; margin-right: 10px;">
+                            <button type="button" class="delete_btn"> 
                                 Delete
                             </button>
                         </form>
                         
                         <a href="{% url 'edit_review' review.id %}">
                             
-                            <button class="edit_btn" style="background-color: yellow; color: black; padding: 8px 16px; border: none; cursor: pointer;">
+                            <button class="edit_btn">
                                 Edit
                             </button>
                         </a>
