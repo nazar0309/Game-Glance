@@ -16,7 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import handler404
+from django.shortcuts import render
 
+
+def custom_404_view(request, exception):
+    return render(request, "404.html", status=404)
+
+handler404 = 'gameglance.urls.custom_404_view'
 
 urlpatterns = [
     path("user_profile/", include("user_profile.urls"), name="user_profile-urls"),
