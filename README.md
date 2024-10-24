@@ -18,5 +18,18 @@ For this project, I have aimed to:
 - Offer a **Related Games** section on each game's description page to suggest similar games.
 - Give users a personalized **Profile Page** to view and manage their reviews, with a search bar to locate specific reviews.
 
+## User Stories
 
+| **As a** | **I can** | **So that** |
+|----------|-----------|-------------|
+| User | View a list of available games | I can explore games and choose which ones I want to know more about |
+| User | Search for a specific game by title or keyword | I can quickly locate a game I’m interested in |
+| User | Click on a game to see its detailed description | I can learn more about the game before deciding to leave a review |
+| User | Register for an account | I can participate by leaving reviews and managing my profile |
+| User | Leave reviews on a game's page | I can share my opinions or feedback about the game |
+| User | Edit or delete my reviews directly from the game page | I can modify or remove feedback I no longer wish to display |
+| User | See a list of related games on a game’s description page | I can discover more games that might interest me |
+| User | View all the reviews I have written on my **Profile Page** | I can keep track of my contributions and manage my activity |
+| User | Search for a specific review on my **Profile Page** | I can quickly find and manage my reviews |
+| User | Log in and out of my account | I can access my personalized features and log out when I’m done |
 
