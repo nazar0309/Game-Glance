@@ -38,11 +38,21 @@ For this project, I have aimed to:
 ### Existing Features
 - **Games List**: ![Game List](/static/images/game_list.png) 
 Displays all available games with basic information such as title, genre, and release date.
-- **Search Bar**: Allows users to search for games by title or keyword to quickly locate games of interest.
-- **Game Details Page**: Clicking on a game shows its detailed description, including genre, platform, release date, and user reviews.
-- **Reviewing System**: Registered users can leave reviews on each game, sharing their thoughts and feedback with others.
-- **Edit/Delete Reviews**: Users can manage their own reviews by editing or deleting them directly from the game description page.
-- **Related Games Section**: Each game’s description page shows related games, helping users discover more content.
-- **Profile Page**: Displays all reviews a user has written, with the ability to search for specific reviews.
-- **About Page**: Contains information about the website and a contact form for users to send inquiries or feedback.
-- **User Authentication**: Secure registration, login, and logout functionality for managing accounts.
+- **Search Bar**: ![Search Bar](/static/images/search_bar.png) 
+Allows users to search for games by title or keyword to quickly locate games of interest.
+- **Game Details Page**: ![Search Bar](/static/images/game_details.png) 
+Clicking on a game shows its detailed description, including genre, platform, release date, and user reviews.
+- **Reviewing System**: ![Search Bar](/static/images/reviews_section.png) 
+Registered users can leave reviews on each game, sharing their thoughts and feedback with others.
+- **Edit/Delete Reviews**: ![Search Bar](/static/images/edit_review.png)
+ ![Search Bar](/static/images/delete_review.png) 
+Users can manage their own reviews by editing or deleting them directly from the game description page.
+- **Related Games Section**: ![Search Bar](/static/images/related_games.png) 
+Each game’s description page shows related games, helping users discover more content.
+- **Profile Page**: ![Search Bar](/static/images/profile.png) 
+Displays all reviews a user has written, with the ability to search for specific reviews.
+- **About Page**: ![Search Bar](/static/images/about.png) 
+Contains information about the website and a contact form for users to send inquiries or feedback.
+- **User Authentication**: ![Search Bar](/static/images/sign_in.png) 
+![Search Bar](/static/images/sign_up.png) 
+Secure registration, login, and logout functionality for managing accounts.
