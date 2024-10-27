@@ -33,6 +33,17 @@ For this project, I have aimed to:
 | User | Search for a specific review on my **Profile Page** | I can quickly find and manage my reviews |
 | User | Log in and out of my account | I can access my personalized features and log out when I’m done |
 
+### Project Board
+
+GitHub Project Boards were used to manage the project. It helped me to prioritize the tasks and to keep track of my progress. 
+This displays a mixture of completed, nearly completed and not started issues:
+
+![KUIDAORE Project Board](/static/images/project_board.png)
+
+This displays a mixture of completed, nearly completed and not started issues:
+
+---
+
 ## Features
 
 ### Existing Features
