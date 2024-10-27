@@ -44,6 +44,10 @@ This displays a mixture of completed, nearly completed and not started issues:
 
 ---
 
+## Wireframes
+
+[Take me to the Project Wireframes](/WIREFRAMES.md)
+
 ## Features
 
 ### Existing Features
