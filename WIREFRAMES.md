@@ -4,7 +4,7 @@
 
 This project includes a set of wireframes illustrating the layout and structure of the user interface, providing a visual guide to the design and functionality across different pages and devices. The wireframes serve as a blueprint, outlining essential elements such as navigation, key content areas, and user interaction points. These visuals ensure alignment on the layout and user experience before diving into detailed design and development.
 
-## Web Wireframes
+## Mobile Wireframes
 
 #### Landing Page
 ![Wireframe of the landing page](/static/images/wf_1.png)
