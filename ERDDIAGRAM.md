@@ -2,7 +2,7 @@
 
 # ERD Diagram
 
-- PostgreSQL was used for the database, storing information about the `About`, `CollaborateRequest`, `Game`, and `Review` models, with Cloudinary used to store image fields.
+- PostgreSQL was used for the database, storing information about the `CollaborateRequest`, `Game`, and `Review` models, with Cloudinary used to store image fields.
 
 ![ERD diagram of database](/static/images/erd_diagram.png)
 

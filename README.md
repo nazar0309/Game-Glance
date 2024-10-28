@@ -75,3 +75,31 @@ Contains information about the website and a contact form for users to send inqu
 - **User Authentication**: ![Search Bar](/static/images/sign_in.png) 
 ![Search Bar](/static/images/sign_up.png) 
 Secure registration, login, and logout functionality for managing accounts.
+
+## Things to Mention
+
+ **Core Features**:
+   - **Game Listing**: Users can browse a curated list of games, with details such as release date, genre, platform, and description.
+   - **Review System**: Registered users can write reviews for games, rate them, and engage with other users through comments.
+   - **User Profiles**: Users have personal profiles to manage their reviews.
+   - **Responsive Design**: The website is fully responsive and optimized for mobile and desktop viewing.
+   
+ **Database Structure**:
+   - The database is structured to support a seamless many-to-many relationship, enabling games to have multiple reviews, and each user to contribute to various reviews.
+
+## Future Features
+
+1. **Game Recommendation System**:
+   - Implement a personalized recommendation engine that suggests games based on user preferences and past interactions, including genres and other users' ratings.
+
+2. **Social Media Integration**:
+   - Enable social sharing options so users can share game reviews or their profiles on social media platforms like Twitter, Facebook, and Reddit.
+
+3. **Advanced Search and Filter Options**:
+   - Allow users to filter games based on multiple criteria (e.g., platform, release date, genre) and perform keyword searches for specific titles or developers.
+
+4. **Rating System and Leaderboards**:
+   - Add a rating system for each game, allowing users to give ratings that affect a game's popularity ranking. A leaderboard could showcase top-rated games each month.
+
+5. **Wishlist and Watchlist**:
+   - Allow users to create wishlists and watchlists for upcoming games, with notifications for release dates or significant game updates.
