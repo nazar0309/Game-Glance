@@ -6,15 +6,6 @@
 
 ![ERD diagram of database](/documentation/images/game-glance-erd-diagram.webp)
 
-### About Model
-
-| Key    | Field Type | Validation                        |
-|--------|------------|-----------------------------------|
-| title  | CharField  | max_length=100                    |
-| content | TextField |                                   |
-| image  | CloudinaryField | default='placeholder'        |
-
-- **Note**: The `About` model stores a descriptive title, content, and an optional image for additional context.
 
 ### CollaborateRequest Model
 
