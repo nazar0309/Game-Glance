@@ -36,3 +36,31 @@ This project includes a set of wireframes illustrating the layout and structure 
 ![Wireframe of the Sign Up Page](/static/images/wf_11.png)
 
 
+## Web Wireframes
+
+#### Landing Page
+![Wireframe of the landing page mb](/static/images/wf_mb_1.png)
+
+#### Game Description Page 
+![Wireframe of the Game Description Page(1) mb](/static/images/wf_mb_2.png)
+
+#### Game Description Page with all views
+![Wireframe of the Game Description Page with all views(1) mb](/static/images/wf_mb_3.png)
+
+#### About Page
+![Wireframe of the About page mb](/static/images/wf_mb_4.png)
+
+#### Profile Page
+![Wireframe of the Profile page mb](/static/images/wf_mb_5.png)
+
+#### Edit View Page
+![Wireframe of the Edit View Page mb](/static/images/wf_mb_6.png)
+
+#### Sign Out Page
+![Wireframe of the Sign Out Page mb](/static/images/wf_mb_7.png)
+
+#### Sign In Page
+![Wireframe of the Sign In Page mb](/static/images/wf_mb_8.png)
+
+#### Sign Up Page
+![Wireframe of the Sign Up Page mb](/static/images/wf_mb_9.png)
