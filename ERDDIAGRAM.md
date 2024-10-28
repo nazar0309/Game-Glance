@@ -4,7 +4,7 @@
 
 - PostgreSQL was used for the database, storing information about the `About`, `CollaborateRequest`, `Game`, and `Review` models, with Cloudinary used to store image fields.
 
-![ERD diagram of database](/documentation/images/game-glance-erd-diagram.webp)
+![ERD diagram of database](/static/images/erd_diagram.png)
 
 
 ### CollaborateRequest Model
