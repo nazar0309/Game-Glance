@@ -48,6 +48,10 @@ This displays a mixture of completed, nearly completed and not started issues:
 
 [Take me to the Project Wireframes](/WIREFRAMES.md)
 
+## ERD Model
+
+[Take me to the Database Model](/ERDDIAGRAM.md)
+
 ## Features
 
 ### Existing Features
