@@ -53,7 +53,7 @@ def game_detail(request, slug):
             review.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                'Review submitted and awaiting approval'
+                'Review has been submitted'
                 )
 
     review_form = ReviewForm()
