@@ -80,6 +80,41 @@ No errors were found when passing it through the validator
 
 ![script.js](/static/test_images/js_test.png)
 
+## Manual Testing (BDD)
+
+- Be aware! Some of the evidence below may not show modal elements even though they appear during testing.
+
+| ID No. | Action | Testing | Result | Evidence |
+|--------|--------|---------|--------|----------|
+| **1** | View games list | Navigate to the games section | The webpage displays a list of available games | ![View Games List](/static/test_images/ev_1.png) |
+| **2** | Click on a game for details | Select a game from the list | The webpage displays the appropriate game template with a detailed description | ![Game Details](/static/test_images/ev_2.png) |
+| **3** | View related games | Check for related games in the game description | The webpage displays games with the same genre | ![View Related Games](/static/test_images/ev_3.png) |
+| **4** | Leave a review for a game | Input review details and click "Submit Review" | The review is submitted and displayed under the game | ![Submit Game Review](/static/test_images/ev_4.png) |
+| **5** | Access the user profile | Click on the user profile icon | The webpage changes to the user profile page | ![View User Profile](/static/test_images/ev_5.png) |
+| **6** | View reviews left by the user | Navigate to the reviews section in the profile | The webpage displays a list of reviews submitted by the user | ![View User Reviews](/static/test_images/ev_6.png) |
+| **7** | Edit a review | Click on the edit button next to a review | The review editing form appears with existing details | ![Edit Game Review](/static/test_images/ev_7.png) |
+| **8** | Submit edited review | Modify the review details and click "Submit" | The edited review is updated on the game page | ![Submit Edited Review](/static/test_images/ev_8.png) |
+| **9** | Delete a review | Click on the delete button next to a review | A confirmation modal appears to confirm deletion | ![Delete Review](/static/test_images/ev_9.png) |
+| **10** | Confirm deletion of review | Click "Confirm" in the deletion modal | The webpage returns to the page where the delete action was initiated | ![Confirm Delete Review](/static/test_images/ev_10.png) |
+| **11** | Logout from the profile | Click on the logout button in the profile | The webpage redirects to the home page and shows "Log in" | ![Logout User](/documentation/gifs/logout-user.gif) |
+| **12** | Redirect to the home page | Click on the home logo | The webpage redirects to the home page | ![Redirect to Home](/documentation/gifs/redirect-to-home.gif) |
+| **13** | Enter an incorrect URL | Manually input a URL that doesn't exist | The webpage redirects to the custom 404 page | ![Custom 404 Page](/static/test_images/ev_11.png) |
+| **14** | Search for a game title | Enter an exact game title in the search bar | The webpage redirects to the corresponding game details page | ![Redirect to Game Details from Search](/documentation/gifs/redirect-to-game-details.gif) |
+| **15** | Search with partial game title | Enter letters from a game title in the search bar | The webpage displays a filtered list of games that match the query | ![Filtered Game List from Search](/static/test_images/ev_12.png) |
+| **16** | Access the About page | Navigate to the About section from the navigation menu | The webpage displays information about the website | ![View About Page](/documentation/gifs/view-about-page.gif) |
+| **17** | Submit collaboration form | Fill in the name, email, and message fields and click "Submit" | The form is submitted successfully with a confirmation message | ![Submit Collaboration Form](/static/test_images/ev_13.png) |
+| **18** | Validate email format | Enter an invalid email format and click "Submit" | The webpage displays an error message for invalid email | ![Invalid Email Format Error](/static/test_images/ev_14.png) |
+| **19** | Verify edit/delete buttons | Check for edit/delete buttons on the reviews page for user's reviews | Edit and delete buttons appear next to the reviews that belong to the user | ![Edit/Delete Buttons on Reviews Page](/static/test_images/ev_15.png) |
+| **20** | Delete review from profile page | Click delete button on a review from the profile page | The confirmation modal appears, click "Confirm" | The user is returned to the profile page with the review removed | ![Deleted Review Profile Page](/documentation/gifs/deleted-review-profile.gif) |
+| **21** | Delete review from game details page | Click delete button on a review from the game details page | The confirmation modal appears, click "Confirm" | The user is returned to the game details page with the review removed | ![Deleted Review Game Details Page](/documentation/gifs/deleted-review-game-details.gif) |
+| **22** | Access profile page from another browser | Attempt to access the profile page from a different browser where the user is not authenticated | The webpage shows an "Access Denied" message or redirects to the login page | ![Access Denied to Profile Page](/static/test_images/ev_16.png) |
+| **23** | Access edit review page from another browser | Attempt to access the edit review page from a different browser where the user is not authenticated | The webpage shows an "Access Denied" message or redirects to the login page | ![Access Denied to Edit Review Page](/static/test_images/ev_17.png) |
+| **24** | Check pagination on game list | Navigate to the games list page | The page displays a limited number of games with pagination controls | ![Pagination Game List](/documentation/gifs/pagination-game-list.gif) |
+| **25** | Navigate to next page of games | Click on the next page button | The webpage updates to show the next set of games | ![Next Page of Game List](/documentation/gifs/next-page-game-list.gif) |
+| **26** | Navigate to previous page of games | Click on the previous page button | The webpage updates to show the previous set of games | ![Previous Page of Game List](/static/test_images/ev_18.png) |
+| **27** | Directly access a specific page via pagination | Click on a specific page number in pagination controls | The webpage updates to show the games on that specific page | ![Specific Page of Game List](/documentation/gifs/specific-page-game-list.gif) |
+
+
 
 
 
