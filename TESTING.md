@@ -96,7 +96,7 @@ No errors were found when passing it through the validator
 | **8** | Submit edited review | Modify the review details and click "Submit" | The edited review is updated on the game page | ![Submit Edited Review](/static/test_images/ev_8.png) |
 | **9** | Delete a review | Click on the delete button next to a review | A confirmation modal appears to confirm deletion | ![Delete Review](/static/test_images/ev_9.png) |
 | **10** | Confirm deletion of review | Click "Confirm" in the deletion modal | The webpage returns to the page where the delete action was initiated | ![Confirm Delete Review](/static/test_images/ev_10.png) |
-| **11** | Logout from the profile | Click on the logout button in the profile | The webpage redirects to the home page and shows "Log in" | ![Logout User](/documentation/gifs/logout-user.gif) |
+| **11** | Logout from the profile | Click on the logout button in the profile | The webpage redirects to the home page and shows "Log in" | ![Logout User](/static/test_images/ev_19.png) |
 | **12** | Redirect to the home page | Click on the home logo | The webpage redirects to the home page | ![Redirect to Home](/documentation/gifs/redirect-to-home.gif) |
 | **13** | Enter an incorrect URL | Manually input a URL that doesn't exist | The webpage redirects to the custom 404 page | ![Custom 404 Page](/static/test_images/ev_11.png) |
 | **14** | Search for a game title | Enter an exact game title in the search bar | The webpage redirects to the corresponding game details page | ![Redirect to Game Details from Search](/documentation/gifs/redirect-to-game-details.gif) |
