@@ -74,6 +74,12 @@ All of the custom CSS lines in the project have been validated and found to be e
 
 ![style.css](/static/test_images/css_test.png)
 
+### JS Validation
+
+No errors were found when passing it through the validator
+
+![script.js](/static/test_images/js_test.png)
+
 
 
 
