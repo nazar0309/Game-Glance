@@ -23,16 +23,24 @@ from django.shortcuts import render
 def custom_404_view(request, exception):
     return render(request, "404.html", status=404)
 
+
 handler404 = 'gameglance.urls.custom_404_view'
 
 urlpatterns = [
-    path("user_profile/", include("user_profile.urls"), name="user_profile-urls"),
-    path("about/", include("about.urls"), name="about-urls"),
+    path(
+        "user_profile/",
+        include("user_profile.urls"),
+        name="user_profile-urls"
+    ),
+    path(
+        "about/",
+        include("about.urls"),
+        name="about-urls"
+    ),
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path('', include('gameblog.urls'), name='gameblog-urls'),  # Add this line
-    
 ]
 
 

@@ -130,7 +130,7 @@ Secure registration, login, and logout functionality for managing accounts.
   - [whitenoise](https://whitenoise.readthedocs.io/en/stable/django.html)
   - [Psycopg2](https://pypi.org/project/psycopg2/)
   - [dj-database-url](https://pypi.org/project/dj-database-url/)
-  
+
 #### Other Tools
   - [Gitpod](https://www.gitpod.io/) was used as the main IDE and tool to write and edit code.
   - [Git](https://git-scm.com/) was used for the version control of the program.
@@ -143,3 +143,7 @@ Secure registration, login, and logout functionality for managing accounts.
   - [Code Institute Python Linter](https://pep8ci.herokuapp.com/#) was used to validate Python code for the website.
 
 ---
+
+## Testing
+
+Please refer to the [TESTING.md](/TESTING.md) for all test-related documentation.
