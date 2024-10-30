@@ -105,3 +105,41 @@ Secure registration, login, and logout functionality for managing accounts.
 
 5. **Wishlist and Watchlist**:
    - Allow users to create wishlists and watchlists for upcoming games, with notifications for release dates or significant game updates.
+
+
+## Technologies Used
+
+#### Languages
+- [Python](https://docs.djangoproject.com/en/5.1/releases/4.2.15/)
+- [JS](https://www.javascript.com/)
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
+#### Frameworks
+- [Django 4.2.15](https://docs.djangoproject.com/en/5.1/releases/4.2.15/)
+
+#### Databases
+- [Code Institutes Postgresql](https://www.postgresql.org/)
+
+#### 3rd Party Imports
+  - [Pip3](https://pypi.org/project/pip/)
+  - [allauth](https://docs.allauth.org/en/latest/)
+  - [summernote](https://pypi.org/project/django-summernote/)
+  - [crispy forms with boostrap 5](https://django-crispy-forms.readthedocs.io/en/latest/)
+  - [Gunicorn](https://gunicorn.org/)
+  - [whitenoise](https://whitenoise.readthedocs.io/en/stable/django.html)
+  - [Psycopg2](https://pypi.org/project/psycopg2/)
+  - [dj-database-url](https://pypi.org/project/dj-database-url/)
+  
+#### Other Tools
+  - [Gitpod](https://www.gitpod.io/) was used as the main IDE and tool to write and edit code.
+  - [Git](https://git-scm.com/) was used for the version control of the program.
+  - [Github](https://github.com/) was used to upload and host my code for collaboration purposes.
+  - [Heroku](https://dashboard.heroku.com/apps) was used for the deployment of the website.
+  - [Lucidchart](https://www.lucidchart.com/pages/) was used for the creation of my ERD model. 
+  - [W3C Validator](https://validator.w3.org/) was used to validate HTML5 code for the website.
+  - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) was used to validate CSS code for the website.
+  - [JShint](https://jshint.com/) was used to validate JS code for the website.
+  - [Code Institute Python Linter](https://pep8ci.herokuapp.com/#) was used to validate Python code for the website.
+
+---
