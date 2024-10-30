@@ -68,4 +68,12 @@ When validating the HTML templates for this project, I had encountered several w
 
 These issues arise from the dynamic nature of Django’s templating syntax, which validators cannot interpret. They do not affect the functioning of the application, and the app runs smoothly despite these warnings. The Django template language is properly parsed at runtime, ensuring all variables, URLs, and elements render as intended.
 
+### CSS Validation
+
+All of the custom CSS lines in the project have been validated and found to be error-free. The stylesheets adhere to best practices, ensuring consistent rendering across browsers and devices. This contributes to the stability and visual appeal of the application, with no issues affecting layout, responsiveness, or design functionality.
+
+![style.css](/static/test_images/css_test.png)
+
+
+
 
