@@ -147,7 +147,13 @@ I used the Lighthouse Dev Tools to assess the performance and accessibility of m
 
 - The performance level may vary depending on image sizes and embedded media.
 
+## Testing Notes
+
+- **Third-Party Cookies and Embedded YouTube Videos:** During testing, it was observed that Chrome is implementing an option that allows users to browse without third-party cookies, which affects embedded content, such as YouTube videos on the website. If a user has disabled third-party cookies, they may experience lots of warnings or be unable to view the embedded YouTube video on the game details page. However, testing on multiple devices showed that the video works correctly when third-party cookies are enabled.
+
+
 [&lt; Back to README file](/README.md)
+
 
 
 
