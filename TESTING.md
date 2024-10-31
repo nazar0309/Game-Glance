@@ -130,18 +130,18 @@ No errors were found when passing it through the validator
 I used the Lighthouse Dev Tools to assess the performance and accessibility of my website.
 
 #### Home Page
-![Lighthouse Dev Tool](/static/test_images/lighthouse-dev-tools-home-page.webp)
+![Lighthouse Dev Tool](/static/test_images/l_test_1)
 
 #### About Page
-![Lighthouse Dev Tool](/static/test_images/lighthouse-dev-tools-about-page.webp)
+![Lighthouse Dev Tool](/static/test_images/l_test_2)
 
 #### Game Details Page
-![Lighthouse Dev Tool](/static/test_images/lighthouse-dev-tools-game-details-page.webp)
+![Lighthouse Dev Tool](/static/test_images/l_test_3)
 
 - *Note:* Lighthouse couldn't display the embedded YouTube video on this page due to rendering limitations. However, this video functions correctly across various devices based on thorough testing.
 
 #### Log Out Page
-![Lighthouse Dev Tool](/static/test_images/lighthouse-dev-tools-logout-page.webp)
+![Lighthouse Dev Tool](/static/test_images/l_test_4)
 
 - *Note:* Lighthouse could not open the **Profile Page** or **Review Edit Page** due to security restrictions. Both pages are accessible only to authenticated users.
 
