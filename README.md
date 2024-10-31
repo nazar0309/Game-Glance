@@ -147,3 +147,13 @@ Secure registration, login, and logout functionality for managing accounts.
 ## Testing
 
 Please refer to the [TESTING.md](/TESTING.md) for all test-related documentation.
+
+## Deployment
+
+Please refer to the [DEPLOYMENT.md](/DEPLOYMENT.md) for all deployment documentation.
+
+- The website was deployed on [Heroku](https://dashboard.heroku.com/apps)
+- The database used was from the Code Institute Postgres database.
+- Access [Game Glance](https://game-glance0309-8d0894eb4eb4.herokuapp.com/) here
+
+---
