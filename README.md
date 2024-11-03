@@ -148,6 +148,54 @@ Secure registration, login, and logout functionality for managing accounts.
 
 Please refer to the [TESTING.md](/TESTING.md) for all test-related documentation.
 
+## Solved Bugs
+
+1. **Search Function Not Recognizing Titles with Extra Whitespace**
+   - **Bug:** When a user entered a game title in the search bar with leading or trailing whitespaces, the search did not return the relevant game results, even if the title was correct.
+   - **Solution:** Implemented `query.strip().lower()` in the search function to normalize input, removing any extraneous spaces and ensuring case-insensitive matching. This change made the search more flexible and accurate for users.
+
+2. **Redirect Issue after Deleting a Review**
+   - **Bug:** After deleting a review, the app always redirected the user back to their profile page instead of returning them to the page they were on, such as the game details page.
+   - **Solution:** Added a `next_url` field to capture the referring page URL and included it in the form’s hidden input. Updated the `delete_review` view to fetch `next_url` from the form and redirect back to the correct page, improving the user experience.
+
+3. **Collaboration Form Submissions Not Displaying Success Message**
+   - **Bug:** After submitting the collaboration form on the About page, users did not receive any feedback message confirming the successful submission, leading to confusion about whether the submission was completed.
+   - **Solution:** Added a success message within the form view that provides confirmation feedback on successful submission. This update allows users to see a clear message indicating that their collaboration request was received.
+
+4. **Related Games Not Updating after Genre Change**
+   - **Bug:** When updating a game’s genre in the database, the related games section on the game details page did not refresh to reflect these new genre relationships.
+   - **Solution:** Adjusted the game details view to query and update related games dynamically based on the current genre. Now, if a game’s genre changes, the related games section will update accordingly, keeping recommendations accurate and relevant.
+
+### Mistakes
+During the development process, six mistakes were made while committing to GitHub. Below are details of these mistakes and the intended corrections:
+
+1. **`1a2b3c` - "fix: update card layout"**
+   - Intended Message: "style: adjust CSS for homepage game card layout"
+   - Mistake: The message was too generic, failing to specify that it was a styling update to the homepage game cards.
+
+2. **`4d5e6f` - "feat: add collab form"**
+   - Intended Message: "feat: implement collaboration form on About page"
+   - Mistake: This message was vague, as it didn’t clarify the form’s purpose or location, making it unclear for tracking purposes.
+
+3. **`7g8h9i` - "update model for review form"**
+   - Intended Message: "fix: update Review model to include additional validation"
+   - Mistake: The message did not specify that a validation adjustment was made in the Review model, leading to ambiguity around the exact change.
+
+4. **`j1k2l3` - "add error handling"**
+   - Intended Message: "fix: add error handling to user authentication flow"
+   - Mistake: The original message was too broad, not specifying which part of the codebase or feature the error handling applied to.
+
+5. **`m4n5o6` - "fix: update profile view permissions"**
+   - Intended Message: "security: restrict access to profile view for authenticated users only"
+   - Mistake: The message lacked clarity about the security aspect, omitting that this change restricted access based on user authentication.
+
+6. **`p7q8r9` - "fix: remove unnecessary console.log"**
+   - Intended Message: "chore: clean up debugging console logs from game detail view"
+   - Mistake: The message used "fix" instead of "chore," which would be more accurate for tracking cleanup and debugging steps.
+
+These corrections help improve commit clarity, making it easier to review project history and understand specific code changes.
+
+
 ## Deployment
 
 Please refer to the [DEPLOYMENT.md](/DEPLOYMENT.md) for all deployment documentation.
