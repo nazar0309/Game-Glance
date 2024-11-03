@@ -208,10 +208,11 @@ Please refer to the [DEPLOYMENT.md](/DEPLOYMENT.md) for all deployment documenta
 
 ### Credits
 ##### Content
-  - I used [Font Awesome](https://fontawesome.com/) to create the icons used in the website.
-  - I used [Balsamiq](https://balsamiq.com/) to create wireframes.
+   - I used [Font Awesome](https://fontawesome.com/) to create the icons used in the website.
+   - I used [Balsamiq](https://balsamiq.com/) to create wireframes.
 
 ##### Media
   - I used [ImageResizer](https://imageresizer.com/) for some README.md, DEPLOYMENT.md, ERDDIAGRAM.md, WIREFRAMES.md and TESTING.md file images.
   - I used [Steam](https://store.steampowered.com/) for all official games images
   - I used [YouTube](https://www.youtube.com/) to get official game trailers
+  - I used [Slack](https://app.slack.com/client/T0L30B202/CGWQJQKC5) to get README examples
