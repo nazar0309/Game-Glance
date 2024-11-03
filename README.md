@@ -7,6 +7,20 @@ Welcome to [**Game Glance**](https://game-glance0309-8d0894eb4eb4.herokuapp.com/
 
 ![GG Landing Page](/static/images/landing.png)
 ---
+## Table of Contents
+1. [Goals](#goals)
+2. [User Stories](#user-stories)
+3. [Project Board](#project-board)
+4. [Wireframes](#wireframes)
+5. [ERD Model](#erd-model)
+6. [Features](#features)
+7. [Technologies Used](#technologies-used)
+8. [Testing](#testing)
+9. [Solved Bugs](#solved-bugs)
+10. [Mistakes](#mistakes)
+11. [Future Features](#future-features)
+12. [Deployment](#deployment)
+13. [Credits](#credits)
 
 ## Goals
 
