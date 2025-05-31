@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'game-glance0309-8d0894eb4eb4.herokuapp.com/',  # replace with your real Heroku URL
+    'game-glance0309-8d0894eb4eb4.herokuapp.com',  # replace with your real Heroku URL
     '127.0.0.1',
     'localhost'
 ]
