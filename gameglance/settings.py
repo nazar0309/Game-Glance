@@ -63,7 +63,6 @@ INSTALLED_APPS = [
     'gameblog',
     'about',
     'user_profile',
-    'support',
     'django_summernote',
     'crispy_forms',
     'crispy_bootstrap5',
